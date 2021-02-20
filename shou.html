@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid skyblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>我是首页</h1>
+        <p><button>退出</button></p>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $("button").on("click",function(){
+        let bol = confirm("确定要返回吗")
+        if(bol){
+            window.location.href = './login.html'
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid skyblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>手机号: <input type="text" class="tel"></p>
+        <p>验证码: <input type="text" class="num"></p>
+        <p>密码: <input type="text" class="pass"></p>
+        <p><button>登录</button></p>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $("button").on("click",function(){
+        $.get("http://localhost:3000/login",{
+            tel: $(".tel").val(),
+            pass: $(".pass").val()
+        },function(res){
+            if(res.msg=='登陆成功'){
+                window.location.href="./shou.html"
+            }
+        })
+    })
+</script>
+</html>
